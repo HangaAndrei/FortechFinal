@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div class="row">
+    <div class="col-xs-12 col-sm-12">
+        <div class="form-control">
+            <select name="books" id="books" th:field="${book.id}">
+                <option th:each="author: ${books}" th:value="${book.id}" th:text ${book.title}></option>
+            </select>
+        </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-12">
+        <div class="form-control">
+            <select name="typeOfBooks" id="typeOfBooks" th:field="${bookType.id}">
+                <option th:each="bookType: ${bookTypes}" th:value="${book.id}" th:text ${bookType.name}></option>
+            </select>
+        </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-lg-12">
+    </div>
+</div>
+<input id="valid-form" class="btn btn-color" type="submit" value="Add type">
+</form>
+</div>
+</div>
+
+</body>
+</html>

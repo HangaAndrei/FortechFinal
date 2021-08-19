@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div class="row">
+    <div class="col-xs-12 col-sm-12 col-lg-12">
+        <form th:action="@{/book-add}" th:object="${newBook}" id="contact-form">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12">
+                    <div class="form-group">
+                        <label for="title">Title:</label><br>
+                        <input class="form form-control" type="text" id="title" name="title" th:field="*{title}"><br>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12">
+                    <div class="form-group">
+                        <label for="description">Description:</label><br>
+                        <input class="form form-control" type="text" id="description" name="description" th:field="*{description}"><br>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-12">
+                    <div class="form-control">
+                        <select name="genre" id="genre" th:field="${author.id}" th:value="editBook.author.id">
+                            <option th:each="author: ${authors}" th:value="${author.id}" th:text ${author.firstName}></option>
+                            <option th:each="author: ${authors}" value="Thriller"></option>
+                            <option th:each="author: ${authors}" value="Comedie"></option>
+                            <option th:each="author: ${authors}" value="Drama"></option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-lg-12">
+                </div>
+            </div>
+            <input id="valid-form" class="btn btn-color" type="submit" value="Add book">
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

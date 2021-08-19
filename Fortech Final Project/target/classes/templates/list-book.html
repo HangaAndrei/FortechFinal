@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>List of books</title>
+</head>
+<body>
+
+<table style="width:100%">
+    <tr>
+        <th>id</th>
+        <th>Title</th>
+    </tr>
+    <tr th:each="book: ${books}">
+        <td th:text="${book.id}"></td>
+        <td  th:text="${book.title}"></td>
+        <td  th:if="${book.author != null}" th:text="${book.author.firstName}"></td>
+        <td  th:text="${book.title.lastName}"></td>
+    </tr>
+</table>
+
+</body>
+</html>

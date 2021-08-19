@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Utilizator</title>
+</head>
+<body>
+
+<div class="row">
+    <div class="col-xs-12 col-sm-12 col-lg-12">
+        <form th:action="@{/user-add}" th:object="${userToBeAdded}" id="contact-form">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12">
+                    <div class="form-group">
+                        <label for="fname">First name:</label><br>
+                        <input class="form form-control" type="text" id="fname" name="fname"  th:field="*{firstName}" ><br>
+                        <p th:text="${errorMessageFirstName}"></p>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12">
+                    <div class="form-group">
+                        <label for="lname">Last name:</label><br>
+                        <input class="form form-control" type="text" id="lname" name="lname" th:field="*{lastName}"><br>
+                        <p th:text="${errorMessageLastName}"></p>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-12 col-lg-12">
+                </div>
+            </div>
+            <input id="valid-form" class="btn btn-color" type="submit" value="Add User">
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
